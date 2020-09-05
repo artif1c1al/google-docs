@@ -54,6 +54,12 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
         test: /\.tsx?$/,
         use: 'ts-loader',
         include: [path.resolve(__dirname, 'src')]

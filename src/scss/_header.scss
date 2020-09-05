@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.header-menu {
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  // padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+
+  &__left {
+    display: grid;
+    grid-gap: 4px;
+    padding: $header-padding;
+      // grid-template-columns: 100px 100px 100px 100px;
+
+    grid-template-columns: 'auto auto 1fr';
+    grid-template-areas: 
+      "icon title document-pref ." 
+      "icon preferences preferences last-change";
+  }
+
+  &__right {
+    right: 0;
+    position: sticky;
+    z-index: 100;
+    padding: $header-padding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+
+    >* {
+      margin: 0 10px;
+    }
+    
+    .comment {
+      font-size: 20px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+  }
+
+  &__icon {
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__title {
+    grid-area: title;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #777;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__preferences {
+    grid-area: preferences;
+    list-style: none;
+    display: flex;
+    
+    >* {
+      margin: 0 10px;
+    }
+  }
+
+  &__document-pref {
+    grid-area: document-pref;
+    margin-left: 14px;
+  }
+
+  &__last-change {
+    // display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; // не сжимает объект
+    grid-area: last-change;
+    color: #777;
+    text-decoration: underline;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+
+    border: 1px solid rgb(235, 235, 235);
+  }
+
+}
+
+
+
+.material-icons {
+  font-size: 16px;
+  color: #777;
+}
+
+.btn {
+  white-space: nowrap;
+  background-color: rgb(38, 125, 255);
+  color: whitesmoke;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 12px;
+
+  .lock {
+    color: whitesmoke;
+    font-size: 12px;
+    margin-right: 7px;
+  }
+}

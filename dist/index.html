@@ -5,13 +5,28 @@
   <meta charset="utf-8">
   <title>Новый документ - Google Документы</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="/path/to/material-icons/iconfont/material-icons.css"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
   <div class="header-menu">
     <div class="header-menu__left">
-      <a class="header-menu__icon" href="#">Icon</a>
-      <div class="header-menu__title">Новый документ</div>
+      <a class="header-menu__icon" href="#">
+        <img src="../img/docs-logo.png" alt="Docs" width="30">
+      </a>
+
+      <div class="header-menu__wrap">
+        <div class=" header-menu__title">Новый документ</div>
+
+        <div class="header-menu__document-pref">
+          <i class="material-icons">star_border</i>
+          <i class="material-icons"> folder_open </i>
+          <i class="material-icons"> cloud_queue </i>
+        </div>
+      </div>
+
       <ul class='header-menu__preferences'>
         <li>Файл</li>
         <li>Правка</li>
@@ -22,11 +37,13 @@
         <li>Дополнения</li>
         <li>Справка</li>
       </ul>
+      <span class="header-menu__last-change">Последнее изменение 6 часов назад</span>
     </div>
 
     <div class="header-menu__right">
-      <a href="##">comments</a>
-      <button>Настройки Доступа</button>
+      <i class='material-icons comment' href="##">comment</i>
+      <button class="btn"><span class="material-icons lock">lock</span>Настройки Доступа</button>
+      <img class="header-menu__avatar" src="../img/cool-man.png" width="30" height="30" alt="">
     </div>
   </div>
 

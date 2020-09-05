@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import './style.scss';
+import './scss/index.scss';
 
 
 function component() {
