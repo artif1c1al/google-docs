@@ -2,35 +2,233 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Новый документ - Google Документы</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="header-menu">
-    <div class="header-menu__left">
-      <a class="header-menu__icon" href="#">Icon</a>
-      <div class="header-menu__title">Новый документ</div>
-      <ul class='header-menu__preferences'>
-        <li>Файл</li>
-        <li>Правка</li>
-        <li>Вид</li>
-        <li>Вставка</li>
-        <li>Формат</li>
-        <li>Инструменты</li>
-        <li>Дополнения</li>
-        <li>Справка</li>
-      </ul>
+  <div class="header">
+    <div class="header-menu">
+      <div class="header-menu__left">
+        <a class="header-menu__icon" href="#">
+          <!-- Стоит ли содержание приравнивать к обертке? -->
+          <!-- Могу ли я указать высоту так? Данный способ не устарел? -->
+          <img class="header-menu__icon" src="../img/docs-logo.png" alt="Docs" height="30" />
+        </a>
+
+        <div class="header-menu__wrap">
+          <div class="header-menu__title" contenteditable="true">
+            Новый документ
+          </div>
+
+          <div class="header-menu__document-pref">
+            <a class="material-icons material-icons_size_s">star_border</a>
+            <a class="material-icons material-icons_size_s" data-tip="Переместить"> folder_open </a>
+            <a class="material-icons material-icons_size_s" data-tip="Посмотреть статус документа"> cloud_queue </a>
+          </div>
+        </div>
+
+        <ul class="header-menu__preferences">
+          <li class="preferences__item">Файл</li>
+          <li class="preferences__item">Правка</li>
+          <li class="preferences__item">Вид</li>
+          <li class="preferences__item">Вставка</li>
+          <li class="preferences__item">Формат</li>
+          <li class="preferences__item">Инструменты</li>
+          <li class="preferences__item">Дополнения</li>
+          <li class="preferences__item">Справка</li>
+        </ul>
+        <span class="header-menu__last-change">
+          Последнее изменение 6 часов назад
+        </span>
+      </div>
+
+      <div class="header-menu__right">
+        <i class="material-icons comment" href="##">comment</i>
+
+        <button class="btn header-menu__btn">
+          <span class="material-icons lock">lock</span>Настройки Доступа
+        </button>
+
+        <img class="header-menu__avatar" src="../img/cool-man.png" width="30" height="30" alt="" />
+      </div>
     </div>
 
-    <div class="header-menu__right">
-      <a href="##">comments</a>
-      <button>Настройки Доступа</button>
+    <div class="header-toolbar">
+      <div class="header-toolbar__left">
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable" data-tip="Отменить">undo</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable" data-tip="Повторить">redo</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Печать">local_printshop</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Проверка грамматики и орфографии">spellcheck</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon"
+          data-tip="Копировать форматирование">format_paint</a>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <div class="center hoverable">
+          <p class="header-toolbar__scale">100%</p>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <div class="center hoverable">
+          <p class="header-toolbar__style">Обычный...</p>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <div class="center hoverable">
+          <p class="header-toolbar__font">Caveat</p>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <div class="center hoverable">
+          <p class="header-toolbar__font">18</p>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Полужирный">format_bold</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Курсив">format_italic</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Подчеркнутый">format_underline</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Цвет текста">text_format</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Цвет фона текста">brush</a>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Вставить ссылку">link</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Добавить комментарий hoverable">add_comment</a>
+
+        <div class="center hoverable">
+          <a class="material-icons material-icons_size_m header-toolbar__icon"
+            data-tip="Вставить изображение">crop_original</a>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Выравнивание по левому краю">format_align_left</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Выравнивание по центру">format_align_center</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Выравнивание по правому краю">format_align_right</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Выравнивание по ширине">format_align_justify</a>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Уменьшить отступ">format_indent_decrease</a>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Увеличить отступ">format_indent_increase</a>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Очистить форматирование">format_clear</a>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable"
+          data-tip="Выбирите способ ввода">language</a>
+      </div>
+
+
+      <div class="header-toolbar__right">
+        <div class="center hoverable">
+          <a class="material-icons material-icons_size_m header-toolbar__icon">edit</a>
+          <p>Редактирова...</p>
+          <a class="material-icons material-icons_size_m header-toolbar__icon">arrow_drop_down</a>
+        </div>
+
+        <div class="vertical-split vertical-split_size_s"></div>
+        <a class="material-icons material-icons_size_m header-toolbar__icon hoverable">keyboard_arrow_up</a>
+      </div>
     </div>
+
   </div>
 
-
+  <div class="workplace">
+    <div class='ruler'>
+      <div class="point">
+        <div class="point__num"></div>
+      </div>
+      <div class="point">
+        <div class="point__num">1</div>
+      </div>
+      <div class="point">
+        <div class="point__num">2</div>
+      </div>
+      <div class="point">
+        <div class="point__num">3</div>
+      </div>
+      <div class="point">
+        <div class="point__num">4</div>
+      </div>
+      <div class="point">
+        <div class="point__num">5</div>
+      </div>
+      <div class="point">
+        <div class="point__num">6</div>
+      </div>
+      <div class="point">
+        <div class="point__num">7</div>
+      </div>
+      <div class="point">
+        <div class="point__num">8</div>
+      </div>
+      <div class="point">
+        <div class="point__num">9</div>
+      </div>
+      <div class="point">
+        <div class="point__num">10</div>
+      </div>
+      <div class="point">
+        <div class="point__num">11</div>
+      </div>
+      <div class="point">
+        <div class="point__num">12</div>
+      </div>
+      <div class="point">
+        <div class="point__num">13</div>
+      </div>
+      <div class="point">
+        <div class="point__num">14</div>
+      </div>
+      <div class="point">
+        <div class="point__num">16</div>
+      </div>
+      <div class="point">
+        <div class="point__num">21</div>
+      </div>
+      <div class="point">
+        <div class="point__num">18</div>
+      </div>
+      <div class="point">
+        <div class="point__num">19</div>
+      </div>
+      <div class="point">
+        <div class="point__num">20</div>
+      </div>
+      <div class="point">
+        <div class="point__num">21</div>
+      </div>
+    </div>
+    <div class="page" contenteditable="true"></div>
+  </div>
   <script src="bundle.js"></script>
 </body>
 

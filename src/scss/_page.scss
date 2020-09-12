@@ -1,0 +1,11 @@
+@import './variables';
+
+.page {
+  position: absolute;
+  top: $ruler-height + 18px;
+  width: $page-width;
+  height: $page-height;  
+  background-color: #fff;
+  box-shadow: 1px 1px 5px rgb(158, 158, 158);
+  outline: none;
+}

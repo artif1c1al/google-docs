@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "./variables";
+@import "./mixins";
+
+.header-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: $header-menu-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: $border-buttom;
+  font-weight: 500;
+  font-size: 14px;
+
+  &__left {
+    display: grid;
+    // row-gap: 4px;
+    padding: $side-padding;
+
+    grid-template-areas:
+      "icon title document-pref ."
+      "icon preferences preferences last-change";
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    position: sticky;
+    z-index: 100;
+    padding: $side-padding;
+    background-color: #fff;
+    > * {
+      margin: 0 10px;
+    }
+    .comment {
+      font-size: 20px;
+      @include adjustRightPart;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+  }
+
+  &__icon {
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #777;
+    @include ellipsis;
+    padding: 4px;
+    outline-color: rgb(0, 119, 255);
+  }
+
+  &__document-pref {
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 10px;
+    grid-area: document-pref;
+
+    > * {
+      margin: 0 4px;
+    }
+  }
+
+  &__preferences {
+    grid-area: preferences;
+    list-style: none;
+    display: flex;
+
+    .preferences__item {
+      margin: 0 8px;
+      padding: 4px;
+
+      &:hover {
+        @include menu-hover;
+      }
+    }
+  }
+
+  &__last-change {
+    display: flex;
+    align-items: center;
+    @include ellipsis;
+    white-space: nowrap; // не сжимает объект
+    grid-area: last-change;
+    color: #777;
+    text-decoration: underline;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    border: 1px solid rgb(235, 235, 235);
+    @include adjustRightPart;
+  }
+
+  &__btn {
+    white-space: nowrap;
+    @include adjustRightPart;
+    .lock {
+      color: whitesmoke;
+      font-size: 12px;
+      margin-right: 7px;
+    }
+  }
+}
