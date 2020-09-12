@@ -1,0 +1,11 @@
+@import './mixins';
+
+.hoverable {
+  &:hover {
+    @include menu-hover;
+  }
+}
+
+.center {
+  @include center;
+}

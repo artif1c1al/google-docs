@@ -6,3 +6,25 @@
   border-radius: 4px;
   font-size: 12px;
 }
+
+.material-icons {
+  color: #777;
+
+  &_size_s {
+    font-size: 16px;
+  }
+
+  &_size_m {
+    font-size: 18px;
+  }
+}
+
+.vertical-split {
+  border-left: 1px solid rgb(223, 223, 223);
+  height: 100%;
+  margin: 0 4px;
+
+  &_size_s {
+    height: 20px;
+  }
+}

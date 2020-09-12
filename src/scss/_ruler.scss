@@ -1,0 +1,52 @@
+@import './variables';
+
+.ruler {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: $ruler-height;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  border-bottom: $border-buttom;
+  
+  .point {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $ruler-pointer-width;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: $ruler-pointer-width / 2;
+      border-left: 1px solid rgb(196, 196, 196);
+      border-right: 1px solid rgb(196, 196, 196);
+      height: 30%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: $ruler-pointer-width;
+      border-right: 1px solid rgb(196, 196, 196);
+      height: 70%;
+    }
+    // ::before {
+    //   content: '';
+    //   z-index: 10000;
+    //   position: absolute;
+    //   background-color: #000000;
+    //   width: 3px;
+    //   height: 90%;
+    //   bottom: 0;
+    //   left: -7px;
+    // }
+
+    &__num {
+      font-size: 12px;
+    }
+  }
+}

@@ -2,3 +2,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin menu-hover {
+  background-color: rgba(236, 236, 236, 0.685);
+  border-radius: 4px;
+}
+
+@mixin adjustRightPart {
+  position: relative;
+  top: -4px;
+}
+
+
+@mixin one-hundred-percent {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
